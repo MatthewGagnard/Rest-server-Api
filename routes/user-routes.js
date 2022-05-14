@@ -51,7 +51,6 @@ async function getMContaining(request,response){
 
 async function getMonster(request,response){
    const req = request.query;
-   console.log(req);
     const document = await monster.find(request.query);
     const json = {status:200, msg:'All Monsters with matching Fetched', data:document};
     response.json(json);
