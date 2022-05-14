@@ -1,0 +1,16 @@
+{
+    "name": "rest-api-server",
+    "version": "0.0.1",
+    "description": "Relay D&D character sheets represented by JSON file",
+    "scripts": {
+        "start": "npm install && node app.js"
+    },
+    "engines": {
+        "node": "v16.14.2"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.0",
+        "express": "*",
+        "mongoose": "^6.3.2"
+    }
+}
