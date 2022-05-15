@@ -28,8 +28,8 @@ async function createPlayer(request,response){
         Race: req.RACE,
         INVEN:req.INVEN})
     await cont.save(cont);
-     const document = await player.find({NAME:cont.NAME});
-     const json = {data:document};
+     const document = await player.find({NAME:req.NAME});
+      json = {data:document};
  }
  response.json(json);
  }
