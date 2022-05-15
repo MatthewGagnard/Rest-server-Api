@@ -45,7 +45,7 @@ async function getMContaining(request,response){
     const cont = request.params.name
     const regex = new RegExp(cont,'i');
     const document = await monster.find({NAME:{$regex:regex}});
-    const json = {data:document};
+    const json = {document};
     response.json(json); 
 }
 
