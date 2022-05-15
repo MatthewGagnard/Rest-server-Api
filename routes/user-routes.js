@@ -29,7 +29,7 @@ async function createPlayer(request,response){
         INVEN:req.INVEN})
     await cont.save(cont);
      const document = await player.find({NAME:cont.NAME});
-     const json = {data:document._id};
+     const json = {data:document};
  }
  response.json(json);
  }
@@ -37,7 +37,8 @@ async function createPlayer(request,response){
 
 async function getPlayer(request,response){
     const cont = request.params._id;
-    const document = await monster.find({NAME:_id});
+    console.log(cont)
+    const document = await player.findByID(cont);
     const json = {data:document};
     response.json(json); 
 }
