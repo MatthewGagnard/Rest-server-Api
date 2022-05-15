@@ -21,6 +21,7 @@ async function testReadAll(){
     const pName = document.getElementById('pName').value;
     const HP = document.getElementById('HP').value;
     const AC = document.getElementById('AC').value;
+    const SPEED = document.getElementById('Speed').value;
     const STR = document.getElementById('STR').value;
     const DEX = document.getElementById('DEX').value;
     const CON = document.getElementById('CON').value;
