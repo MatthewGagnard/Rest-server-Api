@@ -29,7 +29,7 @@ async function createPlayer(request,response){
         INVEN:req.INVEN})
     await cont.save(cont);
      const document = await player.find({NAME:cont.NAME});
-     const json = {status:200, msg:'Player added to database! Save their ID for call back!', data:document._id};
+     const json = {data:document._id};
  }
  response.json(json);
  }
@@ -38,21 +38,21 @@ async function createPlayer(request,response){
 async function getPlayer(request,response){
     const cont = request.params._id;
     const document = await monster.find({NAME:_id});
-    const json = {status:200, msg:'All Monsters with matching Fetched', data:document};
+    const json = {data:document};
     response.json(json); 
 }
 async function getMContaining(request,response){
     const cont = request.params.name
     const regex = new RegExp(cont,'i');
     const document = await monster.find({NAME:{$regex:regex}});
-    const json = {status:200, msg:'All Monsters with matching Fetched', data:document};
+    const json = {data:document};
     response.json(json); 
 }
 
 async function getMonster(request,response){
    const req = request.query;
     const document = await monster.find(request.query);
-    const json = {status:200, msg:'All Monsters with matching Fetched', data:document};
+    const json = {data:document};
     response.json(json);
 }
  
