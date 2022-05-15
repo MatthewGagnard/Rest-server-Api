@@ -43,7 +43,7 @@
        <div class='container-fluid bg-dark rounded'>
        
        <pre class='text-light'>Example URL: 'https://monster-stat-api.herokuapp.com/Player?NAME=Vensin&HP=45&AC=14&SPEED=30&STR=10&DEX=12&CON=14&WIS=20&INT=10&CHA=8</pre>
-        <pre class='text-light' id='testSpae'>Results go here!</pre>
+        <pre class='text-light' id='testPSpace'>Results go here!</pre>
         
         </div>
         <div class='container'>
@@ -59,7 +59,7 @@
         <input class="form-control"  id="CON" name="CON" placeholder="CON">
         <input class="form-control"  id="INT" name="INT" placeholder="INT">
         <input class="form-control"  id="WIS" name="WIS" placeholder="WIS">
-        <input class="form-control"  id="CHA" name="CHA" placeholder="CHA">
+        <input class="form-control"  id="CHA"name="CHA" placeholder="CHA">
         <button class='btn btn-success float-end' onclick=createCharacter()>Create a character</button>
         </div>
     </div>
@@ -71,7 +71,7 @@
         </div>
         <p class='text-light'>Type '_id' from creation to search for your player by that id</p>
         <input class="form-control"  id="id" name='id' placeholder="Character _id">
-        <button class='btn btn-success float-end' onclick=testReadAll()>Find player</button>
+        <button class='btn btn-success float-end' onclick=testPlayerGet()>Find player</button>
     </div>
     
         <script src="scripts/api-tester.js"></script>

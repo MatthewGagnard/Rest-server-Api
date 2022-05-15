@@ -27,9 +27,9 @@ async function testReadAll(){
     const INT = document.getElementById('INT').value;
     const WIS = document.getElementById('WIS').value;
     const CHA = document.getElementById('CHA').value;
-    const response = await fetch(`https://monster-stat-api.herokuapp.com/Player?NAME=${NAME}&HP=${HP}&AC=${AC}&SPEED=${SPEED}&STR=${STR}&DEX=${DEX}&CON=${CON}&WIS=${WIS}&INT=${INT}&CHA=${CHA}`, config);
+    const response = await fetch(`https://monster-stat-api.herokuapp.com/Player?NAME=${pNAME}&HP=${HP}&AC=${AC}&SPEED=${SPEED}&STR=${STR}&DEX=${DEX}&CON=${CON}&WIS=${WIS}&INT=${INT}&CHA=${CHA}`, config);
     const data = await response.json()
-    document.getElementById('testSpace').innerHTML = `<p>${JSON.stringify(data)}</p>`
+    document.getElementById('testPSpace').innerHTML = `<p>${JSON.stringify(data)}</p>`
     }
 
     async function testPlayerGet(){
