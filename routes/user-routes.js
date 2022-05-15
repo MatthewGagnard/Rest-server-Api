@@ -38,7 +38,7 @@ async function createPlayer(request,response){
 async function getPlayer(request,response){
     const cont = request.params._id;
     console.log(cont)
-    const document = await player.findByID(cont);
+    const document = await player.find({_id:cont});
     const json = {data:document};
     response.json(json); 
 }
