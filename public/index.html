@@ -10,16 +10,71 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
-    <body>
-        <div class="head">
-            <h1 class="title">D&D Monster API</h1>
+   <body>
+        <div class="container mt-5 text-center">
+            <h1 class="title text-dark">D&D Monster API</h1>
+            <h5 class='text-dark'>store and display stats!</h5>
         </div>
-    <div class="container">
+    <div class="container mt-5">
         <h2 class="section-header">Get all monsters</h2>
-        <pre><span class='htmlText'>"https://monster-stat-api.herokuapp.com/Monster"</span></pre>
-        <span id="testSpace"></span>
-        <button onclick = testReadAll()>Read all monsters</button>
+       <div class='container-fluid bg-dark rounded'>
+       
+       <pre class='text-light'>Example URL: 'https://monster-stat-api.herokuapp.com/Monster'</pre>
+        <pre class='text-light' id='testSpace'>Results go here!</pre>
+        </div>
+        <p class='text-light'>'/Monster' is used to get every monster we have stored!</p>
+        <button class='btn btn-success float-end' onclick=testReadAll()>Read all monsters</button>
     </div>
+     <div class="container mt-5">
+        <h2 class="section-header">Get Monsters by name</h2>
+       <div class='container-fluid bg-dark rounded'>
+       
+       <pre class='text-light'>Example URL: 'https://monster-stat-api.herokuapp.com/Monster/containing/<`Name of monster here`></pre>
+        <pre class='text-light' id='testSpace'>Results go here!</pre>
+        
+        </div>
+        <div class='container'>
+        <p class='text-light'>'/Monster/containg/xxxx' does a case-insensitive search for monster stat blocks. </p>
+        <input class="form-control"  id="mName" name='mName' placeholder="Enter a monster name!">
+        <button class='btn btn-success float-end' onclick=testMonsterCont()>Test monster search</button>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h2 class="section-header">Create a player!</h2>
+       <div class='container-fluid bg-dark rounded'>
+       
+       <pre class='text-light'>Example URL: 'https://monster-stat-api.herokuapp.com/Player?NAME=Vensin&HP=45&AC=14&SPEED=30&STR=10&DEX=12&CON=14&WIS=20&INT=10&CHA=8</pre>
+        <pre class='text-light' id='testSpace'>Results go here!</pre>
+        
+        </div>
+        <div class='container'>
+        <p class='text-light'>Create a player character sheet! Currently only availble from here. Fields are all taken after ?. Only accepted "Name,Hp,Ac,Speed,Str,Dex,Con,Int,Wis,Cha, and INVEN (an array of strings containing the inventory)" </p>
+        <p class='text-light'>Make sure you keep track of the "_id" that comes back. This is your way you access your character!</p>
+ 
+        <input class="form-control"  id="pName" name='pName' placeholder="Character Name">
+        <input class="form-control"  id="HP" name='HP' placeholder="HP">
+        <input class="form-control"  id="AC" name='AC' placeholder="AC">
+        <input class="form-control"  id="Speed" name="Speed" placeholder="Speed">
+        <input class="form-control"  id="STR" name="STR" placeholder="STR">
+        <input class="form-control"  id="DEX" name="DEX" placeholder="DEX">
+        <input class="form-control"  id="CON" name="CON" placeholder="CON">
+        <input class="form-control"  id="INT" name="INT" placeholder="INT">
+        <input class="form-control"  id="WIS" name="WIS" placeholder="WIS">
+        <input class="form-control"  id="CHA" name="CHA" placeholder="CHA">
+        <button class='btn btn-success float-end' onclick=createCharacter()>Create a character</button>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h2 class="section-header">Get player</h2>
+       <div class='container-fluid bg-dark rounded'>
+       <pre class='text-light'>Example URL: 'https://monster-stat-api.herokuapp.com/Player/:id</pre>
+        <pre class='text-light' id='testSpace'>Results go here!</pre>
+        </div>
+        <p class='text-light'>Type '_id' from creation to search for your player by that id</p>
+        <input class="form-control"  id="id" name='id' placeholder="Character _id">
+        <button class='btn btn-success float-end' onclick=testReadAll()>Find player</button>
+    </div>
+    
         <script src="scripts/api-tester.js"></script>
     </body>
 </html>
